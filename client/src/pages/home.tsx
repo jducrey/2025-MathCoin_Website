@@ -250,10 +250,15 @@ export default function Home() {
                     <CheckCircle className="w-6 h-6 text-primary mr-3" />
                     <h3 className="text-xl font-semibold text-foreground">Formation Académique</h3>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">
-                    <strong>Master des Métiers de l'Enseignement, de l'Éducation et la Formation en Mathématiques</strong> - 
-                    Formation complète aux méthodes pédagogiques modernes et à l'enseignement des mathématiques.
-                  </p>
+                  <div className="text-muted-foreground leading-relaxed space-y-2">
+                    <p>
+                      <strong>Master des Métiers de l'Enseignement, de l'Éducation et la Formation en Mathématiques</strong> - 
+                      Formation complète aux méthodes pédagogiques modernes et à l'enseignement des mathématiques.
+                    </p>
+                    <p>
+                      <strong>CAPES de Mathématiques obtenu</strong> - Certification professionnelle attestant de la maîtrise disciplinaire et pédagogique pour l'enseignement des mathématiques.
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
               
@@ -408,7 +413,7 @@ export default function Home() {
                   <div className="space-y-4">
                     <div className="flex items-center">
                       <Mail className="w-6 h-6 text-primary mr-4" />
-                      <a href="mailto:contact@mathcoin.fr" className="text-primary hover:underline">contact@mathcoin.fr</a>
+                      <a href="mailto:mathcoin13@gmail.com" className="text-primary hover:underline">mathcoin13@gmail.com</a>
                     </div>
                     <div className="flex items-center">
                       <Clock className="w-6 h-6 text-primary mr-4" />
@@ -501,18 +506,57 @@ export default function Home() {
                       name="besoin"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Type de besoin</FormLabel>
+                          <FormLabel>Type de besoin (choix multiples possibles)</FormLabel>
+                          <div className="space-y-3">
+                            {[
+                              { id: "soutien", label: "Soutien scolaire" },
+                              { id: "remise-niveau", label: "Remise à niveau" },
+                              { id: "preparation-examens", label: "Préparation aux examens" },
+                              { id: "preparation-concours", label: "Préparation aux concours" }
+                            ].map((besoin) => (
+                              <div key={besoin.id} className="flex items-center space-x-2">
+                                <Checkbox
+                                  id={besoin.id}
+                                  checked={Array.isArray(field.value) && field.value.includes(besoin.id)}
+                                  onCheckedChange={(checked) => {
+                                    const currentValue = Array.isArray(field.value) ? field.value : [];
+                                    if (checked) {
+                                      field.onChange([...currentValue, besoin.id]);
+                                    } else {
+                                      field.onChange(currentValue.filter((value: string) => value !== besoin.id));
+                                    }
+                                  }}
+                                />
+                                <label
+                                  htmlFor={besoin.id}
+                                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                >
+                                  {besoin.label}
+                                </label>
+                              </div>
+                            ))}
+                          </div>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="modalite"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Modalité préférée</FormLabel>
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
                               <SelectTrigger>
-                                <SelectValue placeholder="Sélectionnez le type de besoin" />
+                                <SelectValue placeholder="Choisissez la modalité" />
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
-                              <SelectItem value="soutien">Soutien scolaire</SelectItem>
-                              <SelectItem value="remise-niveau">Remise à niveau</SelectItem>
-                              <SelectItem value="preparation-examens">Préparation aux examens</SelectItem>
-                              <SelectItem value="preparation-concours">Préparation aux concours</SelectItem>
+                              <SelectItem value="distanciel">Distanciel (en ligne)</SelectItem>
+                              <SelectItem value="presentiel">Présentiel (en personne)</SelectItem>
+                              <SelectItem value="les-deux">Les deux (flexible)</SelectItem>
                             </SelectContent>
                           </Select>
                           <FormMessage />

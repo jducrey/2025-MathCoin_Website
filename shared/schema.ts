@@ -29,6 +29,8 @@ export const insertUserSchema = createInsertSchema(users).pick({
 export const insertContactRequestSchema = createInsertSchema(contactRequests).omit({
   id: true,
   createdAt: true,
+}).extend({
+  besoin: z.array(z.string()).min(1, "Veuillez sélectionner au moins un type de besoin"),
 });
 
 export type InsertUser = z.infer<typeof insertUserSchema>;
