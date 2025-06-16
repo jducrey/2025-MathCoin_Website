@@ -12,7 +12,8 @@ export const contactRequests = pgTable("contact_requests", {
   id: serial("id").primaryKey(),
   demandeur: text("demandeur").notNull(),
   niveau: text("niveau").notNull(),
-  besoin: text("besoin").notNull(),
+  besoin: text("besoin").array().notNull(),
+  modalite: text("modalite").notNull(), // présentiel, distanciel, les deux
   volume: text("volume").notNull(),
   objectif: text("objectif").notNull(),
   disponibilites: text("disponibilites").notNull(),

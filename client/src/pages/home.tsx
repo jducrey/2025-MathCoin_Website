@@ -5,6 +5,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactRequestSchema } from "@shared/schema";
@@ -12,6 +13,7 @@ import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { Calculator, GraduationCap, BookOpen, Clock, Mail, CheckCircle, Menu, X } from "lucide-react";
+import mathCoinLogo from "@assets/MathCoinSymbol_1750082905685.png";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -22,7 +24,8 @@ export default function Home() {
     defaultValues: {
       demandeur: "",
       niveau: "",
-      besoin: "",
+      besoin: [],
+      modalite: "",
       volume: "",
       objectif: "",
       disponibilites: "",
@@ -115,7 +118,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
-              <Calculator className="w-8 h-8 text-primary" />
+              <img src={mathCoinLogo} alt="MathCoin" className="w-8 h-8" />
               <span className="text-xl font-bold text-primary">MathCoin</span>
             </div>
             
