@@ -109,3 +109,4 @@ Preferred communication style: Simple, everyday language.
 Changelog:
 - June 16, 2025. Initial setup
 - June 16, 2025. Updated design with warm orange color scheme, added MathCoin logo, enhanced contact form with multiple selection for needs and course modality preferences, added CAPES certification to academic background, updated contact email to mathcoin13@gmail.com
+- June 16, 2025. Simplified contact section by removing complex form and replacing with simple email contact instructions including all required information fields listed with options
