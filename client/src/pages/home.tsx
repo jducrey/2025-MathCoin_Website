@@ -1,62 +1,11 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { insertContactRequestSchema } from "@shared/schema";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
-import { useToast } from "@/hooks/use-toast";
 import { Calculator, GraduationCap, BookOpen, Clock, Mail, CheckCircle, Menu, X } from "lucide-react";
 import mathCoinLogo from "@assets/MathCoinSymbol_1750082905685.png";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { toast } = useToast();
-
-  const form = useForm({
-    resolver: zodResolver(insertContactRequestSchema),
-    defaultValues: {
-      demandeur: "",
-      niveau: "",
-      besoin: [],
-      modalite: "",
-      volume: "",
-      objectif: "",
-      disponibilites: "",
-      message: "",
-    },
-  });
-
-  const contactMutation = useMutation({
-    mutationFn: async (data: any) => {
-      const response = await apiRequest("POST", "/api/contact", data);
-      return response.json();
-    },
-    onSuccess: (data) => {
-      toast({
-        title: "Message envoyé !",
-        description: data.message,
-      });
-      form.reset();
-    },
-    onError: (error: any) => {
-      toast({
-        title: "Erreur",
-        description: error.message || "Une erreur est survenue lors de l'envoi de votre demande.",
-        variant: "destructive",
-      });
-    },
-  });
-
-  const onSubmit = (data: any) => {
-    contactMutation.mutate(data);
-  };
 
   // Smooth scrolling function
   const scrollToSection = (sectionId: string) => {
@@ -377,14 +326,18 @@ export default function Home() {
                       <Calculator className="w-5 h-5 text-primary mr-3" />
                       <span className="font-medium text-foreground">Cours en ligne</span>
                     </div>
-                    <p className="text-muted-foreground text-sm ml-8">Via plateforme de visioconférence avec tableau interactif</p>
+                    <p className="text-muted-foreground text-sm ml-8">
+                      Plateforme vidéo avec tableau interactif, flexibilité horaire maximale.
+                    </p>
                   </div>
                   <div>
                     <div className="flex items-center mb-2">
-                      <GraduationCap className="w-5 h-5 text-primary mr-3" />
+                      <BookOpen className="w-5 h-5 text-primary mr-3" />
                       <span className="font-medium text-foreground">Cours en présentiel</span>
                     </div>
-                    <p className="text-muted-foreground text-sm ml-8">Selon disponibilités et zone géographique</p>
+                    <p className="text-muted-foreground text-sm ml-8">
+                      À domicile ou en lieu convenu, selon vos disponibilités.
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -444,217 +397,46 @@ export default function Home() {
               </Card>
             </div>
 
-            {/* Contact Form */}
+            {/* Contact Information */}
             <Card>
               <CardContent className="p-8">
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                    <FormField
-                      control={form.control}
-                      name="demandeur"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Pour qui est la demande ?</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <FormControl>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Choisissez une option" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              <SelectItem value="moi-meme">Pour moi-même</SelectItem>
-                              <SelectItem value="mon-enfant">Pour mon enfant</SelectItem>
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
+                <h3 className="text-2xl font-semibold text-foreground mb-6">Demande de Cours</h3>
+                <div className="space-y-4 mb-6">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Pour toute demande de cours particuliers de mathématiques, contactez-moi par email à{" "}
+                    <a href="mailto:mathcoin13@gmail.com" className="text-primary hover:underline font-medium">
+                      mathcoin13@gmail.com
+                    </a>
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Merci d'inclure les informations suivantes dans votre message :
+                  </p>
+                </div>
 
-                    <FormField
-                      control={form.control}
-                      name="niveau"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Niveau actuel de l'élève</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <FormControl>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Sélectionnez le niveau" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              <SelectItem value="6eme">6ème</SelectItem>
-                              <SelectItem value="5eme">5ème</SelectItem>
-                              <SelectItem value="4eme">4ème</SelectItem>
-                              <SelectItem value="3eme">3ème</SelectItem>
-                              <SelectItem value="2nde">2nde</SelectItem>
-                              <SelectItem value="1ere">1ère</SelectItem>
-                              <SelectItem value="terminale">Terminale</SelectItem>
-                              <SelectItem value="licence">Licence</SelectItem>
-                              <SelectItem value="bts">BTS</SelectItem>
-                              <SelectItem value="but">BUT</SelectItem>
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
+                <div className="space-y-4">
+                  <div className="bg-muted p-4 rounded-lg">
+                    <h4 className="font-semibold text-foreground mb-3">Informations sur la demande :</h4>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• <strong>Pour qui est la demande ?</strong> (Pour moi-même, Pour mon enfant)</li>
+                      <li>• <strong>Niveau actuel de l'élève</strong> (6ème, 5ème, 4ème, 3ème, 2nde, 1ère, Terminale, Licence, BTS, BUT)</li>
+                      <li>• <strong>Type de besoin</strong> (Soutien scolaire, Remise à niveau, Préparation aux examens, Préparation aux concours)</li>
+                      <li>• <strong>Modalité préférée</strong> (Distanciel en ligne, Présentiel en personne, Les deux flexible)</li>
+                      <li>• <strong>Volume horaire souhaité</strong> (1 heure, 1h30, 2 heures, 3 heures, Plus de 3 heures par semaine)</li>
+                      <li>• <strong>Objectif</strong> (Court terme quelques mois, Long terme année scolaire complète)</li>
+                      <li>• <strong>Disponibilités</strong> (jours et horaires préférés)</li>
+                      <li>• <strong>Message complémentaire</strong> (informations supplémentaires, difficultés particulières...)</li>
+                    </ul>
+                  </div>
 
-                    <FormField
-                      control={form.control}
-                      name="besoin"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Type de besoin (choix multiples possibles)</FormLabel>
-                          <div className="space-y-3">
-                            {[
-                              { id: "soutien", label: "Soutien scolaire" },
-                              { id: "remise-niveau", label: "Remise à niveau" },
-                              { id: "preparation-examens", label: "Préparation aux examens" },
-                              { id: "preparation-concours", label: "Préparation aux concours" }
-                            ].map((besoin) => (
-                              <div key={besoin.id} className="flex items-center space-x-2">
-                                <Checkbox
-                                  id={besoin.id}
-                                  checked={Array.isArray(field.value) && field.value.includes(besoin.id)}
-                                  onCheckedChange={(checked) => {
-                                    const currentValue = Array.isArray(field.value) ? field.value : [];
-                                    if (checked) {
-                                      field.onChange([...currentValue, besoin.id]);
-                                    } else {
-                                      field.onChange(currentValue.filter((value: string) => value !== besoin.id));
-                                    }
-                                  }}
-                                />
-                                <label
-                                  htmlFor={besoin.id}
-                                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                                >
-                                  {besoin.label}
-                                </label>
-                              </div>
-                            ))}
-                          </div>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="modalite"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Modalité préférée</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <FormControl>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Choisissez la modalité" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              <SelectItem value="distanciel">Distanciel (en ligne)</SelectItem>
-                              <SelectItem value="presentiel">Présentiel (en personne)</SelectItem>
-                              <SelectItem value="les-deux">Les deux (flexible)</SelectItem>
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="volume"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Volume horaire souhaité (heures par semaine)</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <FormControl>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Choisissez le volume" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              <SelectItem value="1h">1 heure</SelectItem>
-                              <SelectItem value="1h30">1h30</SelectItem>
-                              <SelectItem value="2h">2 heures</SelectItem>
-                              <SelectItem value="3h">3 heures</SelectItem>
-                              <SelectItem value="plus">Plus de 3 heures</SelectItem>
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="objectif"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Objectif</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <FormControl>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Sélectionnez l'objectif" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              <SelectItem value="court-terme">Court terme (quelques mois)</SelectItem>
-                              <SelectItem value="long-terme">Long terme (année scolaire complète)</SelectItem>
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="disponibilites"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Disponibilités (jours/horaires)</FormLabel>
-                          <FormControl>
-                            <Textarea 
-                              placeholder="Exemple: Lundi 17h-19h, Mercredi 14h-16h, Samedi matin..."
-                              {...field}
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Message complémentaire (optionnel)</FormLabel>
-                          <FormControl>
-                            <Textarea 
-                              placeholder="Informations supplémentaires, difficultés particulières..."
-                              {...field}
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <Button 
-                      type="submit" 
-                      className="w-full" 
-                      size="lg"
-                      disabled={contactMutation.isPending}
-                    >
-                      {contactMutation.isPending ? "Envoi en cours..." : "Envoyer ma demande"}
+                  <div className="flex items-center justify-center pt-4">
+                    <Button asChild size="lg">
+                      <a href="mailto:mathcoin13@gmail.com?subject=Demande de cours particuliers de mathématiques">
+                        <Mail className="w-5 h-5 mr-2" />
+                        Envoyer un email
+                      </a>
                     </Button>
-                  </form>
-                </Form>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -666,7 +448,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex items-center justify-center space-x-2 mb-4">
-              <Calculator className="w-8 h-8 text-primary" />
+              <img src={mathCoinLogo} alt="MathCoin" className="w-8 h-8" />
               <span className="text-xl font-bold">MathCoin</span>
             </div>
             <p className="text-gray-400 mb-4">Cours particuliers de mathématiques - Tous niveaux</p>
