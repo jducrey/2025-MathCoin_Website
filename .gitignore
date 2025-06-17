@@ -1,6 +1,21 @@
+# Dépendances
 node_modules
+
+# Fichiers de build
 dist
-.DS_Store
-server/public
-vite.config.ts.*
 *.tar.gz
+
+# Mac OS
+.DS_Store
+
+# Fichiers serveur/public (peut contenir des builds temporaires)
+server/public
+
+# Fichiers de config et logs temporaires
+vite.config.ts.*
+*.log
+.env
+.env.*
+
+# VS Code config (optionnel mais souvent utile)
+.vscode/
