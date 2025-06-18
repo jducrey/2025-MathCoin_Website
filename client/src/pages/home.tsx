@@ -222,7 +222,7 @@ export default function Home() {
                     <h3 className="text-xl font-semibold text-foreground">Expérience Professionnelle</h3>
                   </div>
                   <p className="text-muted-foreground leading-relaxed">
-                    Plusieurs années d'expérience dans l'enseignement particulier avec des élèves de tous niveaux. 
+                    Plusieurs années d'expérience aussi bien dans l'éducation nationale que dans l'enseignement particulier avec des élèves de tous niveaux. 
                     Accompagnement personnalisé et suivi régulier des progrès.
                   </p>
                 </CardContent>
@@ -236,7 +236,7 @@ export default function Home() {
                   </div>
                   <p className="text-muted-foreground leading-relaxed">
                     Passion pour la pédagogie et l'adaptation aux différents profils d'apprentissage. 
-                    Méthodes variées pour rendre les mathématiques accessibles et motivantes.
+                    Méthodes variées pour changer le regard sur les mathématiques en les rendant plus accessibles et motivantes.
                   </p>
                 </CardContent>
               </Card>
