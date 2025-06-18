@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calculator, GraduationCap, BookOpen, Clock, Mail, CheckCircle, Menu, X } from "lucide-react";
 import mathCoinLogo from "@assets/MathCoinSymbol_1750082905685.png";
+import profImage from "@assets/prof.jpg";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -189,6 +190,9 @@ export default function Home() {
             <div>
               <div className="bg-muted rounded-2xl p-8 flex items-center justify-center mb-8 md:mb-0">
                 <GraduationCap className="w-32 h-32 text-primary" />
+              </div>
+              <div className="bg-muted rounded-2xl p-8 flex items-center justify-center mb-8 md:mb-0">
+                <img src={profImage} alt="Mon portrait" className="portrait" />
               </div>
             </div>
             
