@@ -347,6 +347,94 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
+
+          {/* Detailed Lessons */}
+          <div className="max-w-4xl mx-auto mt-12 px-4">
+            <Card>
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-semibold text-foreground mb-6">Notions Types par niveaux</h3>
+                <div className="space-y-6">
+                  {/* Niveau 6ème */}
+                  <div className="rounded-x1 shadow-sm border p-6 bg-background">
+                    <h4 className="text-lg font-medium text-primary mb-2">6<sup>ème</sup></h4>
+                    <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
+                      <li>Fractions et Opérations</li>
+                    </ul>
+                  </div>
+                  {/* Niveau 5ème */}
+                  <div className="rounded-x1 shadow-sm border p-6 bg-background">
+                    <h4 className="text-lg font-medium text-primary mb-2">5<sup>ème</sup></h4>
+                    <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
+                      <li>Nombres relatives</li>
+                      <li>Etudes des quadrilatères</li>
+                    </ul>
+                  </div>
+                  {/* Niveau 4ème */}
+                  <div className="rounded-x1 shadow-sm border p-6 bg-background">
+                    <h4 className="text-lg font-medium text-primary mb-2">4<sup>ème</sup></h4>
+                    <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
+                      <li>Théorème de Pythagore</li>
+                    </ul>
+                  </div>
+                  {/* Niveau 3ème */}
+                  <div className="rounded-x1 shadow-sm border p-6 bg-background">
+                    <h4 className="text-lg font-medium text-primary mb-2">3<sup>ème</sup></h4>
+                    <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
+                      <li>Théorème de Thalès</li>
+                      <li>Trigonométrie</li>
+                      <li>Fonctions linéaires et affines</li>
+                    </ul>
+                  </div>
+                  {/* Niveau 2nd */}
+                  <div className="rounded-x1 shadow-sm border p-6 bg-background">
+                    <h4 className="text-lg font-medium text-primary mb-2">2<sup>nd</sup></h4>
+                    <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
+                      <li>Produit Scalaire</li>
+                      <li>Suites Arithmético-géométriques</li>
+                      <li>Statistiques Descriptives</li>
+                    </ul>
+                  </div>
+                  {/* Niveau 1ère */}
+                  <div className="rounded-x1 shadow-sm border p-6 bg-background">
+                    <h4 className="text-lg font-medium text-primary mb-2">1<sup>ère</sup></h4>
+                    <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
+                      <li>Equations du Second Degré</li>
+                      <li>Tangentes et Dérivation</li>
+                      <li>Equations cartésienne et représentations paramétriques</li>
+                    </ul>
+                  </div>
+                  {/* Niveau Terminale */}
+                  <div className="rounded-x1 shadow-sm border p-6 bg-background">
+                    <h4 className="text-lg font-medium text-primary mb-2">Terminale</h4>
+                    <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
+                      <li>Fonctions exponentielles et logarithmes</li>
+                      <li>Arithmétiques de Nombres Premiers et Congruences</li>
+                      <li>Produit Vectoriel et Produit Mixte</li>
+                      <li>Matrices et opérations matricielles</li>
+                      <li>Probabilités conditionnelles</li>
+                    </ul>
+                  </div>
+                  {/* Niveau Post-Bac */}
+                  <div className="rounded-x1 shadow-sm border p-6 bg-background">
+                    <h4 className="text-lg font-medium text-primary mb-2">Post-Bac</h4>
+                    <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
+                      <li>Equations diophantiennes</li>
+                      <li>Algorithme et Méthodes numériques (Newton, Sécante, ...)</li>
+                      <li>Algèbre linéaire et études des Endomorphismes</li>
+                      <li>Algèbre Structurelle : Groupes, Anneaux, Corps</li>
+                      <li>Développements limités et asymptotiques</li>
+                      <li>Suite et Séries de fonctions</li>
+                      <li>Intégration de Riemann</li>
+                      <li>Théorie de la Mesure et Intégration de Lesbesgue</li>
+                      <li>Espaces Vectoriels Normés</li>
+                      <li>Espace de Hilbert</li>
+                      <li>Transformée de Fourrier</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
