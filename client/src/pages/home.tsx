@@ -345,6 +345,27 @@ export default function Home() {
             </Card>
           </div>
 
+          {/* Pricing */}
+          <div className="max-w-md mx-auto mt-12 px-4">
+            <Card className="bg-primary text-white">
+              <CardContent className="p-8 flex flex-col items-center text-center">
+                <h3 className="text-2xl font-semibold text-white mb-6">Tarifs</h3>
+                <div className="space-y-6">
+                  <div>
+                    <div className="flex items-center mb-2">
+                      <Calculator className="w-5 h-5 text-white mr-3" />
+                      <span className="font-medium text-white">Cours en ligne et en présentiel</span>
+                    </div>
+                    <p className="text-sm ml-8 text-white">
+                      30€ pour 1h de cours.<br />
+                      40€ pour 1h30 de cours.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
           {/* Detailed Lessons */}
           <div className="max-w-4xl mx-auto mt-12 px-4">
             <Card>
