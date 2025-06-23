@@ -157,7 +157,8 @@ export default function Home() {
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
               Professeure expérimentée proposant un accompagnement personnalisé en mathématiques, 
-              de la 6ème aux études supérieures. Pédagogie adaptée à chaque élève.
+              de la 6ème aux études supérieures.<br />
+              Pédagogie adaptée à chaque élève.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -277,7 +278,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-4">Tous Niveaux</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  De la 6ème à la Terminale, plus formations supérieures (Licence maths, BTS, BUT).
+                  De la 6ème à la Terminale + formations supérieures (licences, classes prépas, BTS, BUT).
                 </p>
               </CardContent>
             </Card>
@@ -311,11 +312,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-primary mr-3" />
-                    <span className="text-muted-foreground">Préparation aux examens (Brevet, Bac)</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-primary mr-3" />
-                    <span className="text-muted-foreground">Préparation aux concours</span>
+                    <span className="text-muted-foreground">Préparation aux examens (Brevet, Bac, Partiels, Concours)</span>
                   </div>
                 </div>
               </CardContent>
@@ -340,7 +337,7 @@ export default function Home() {
                       <span className="font-medium text-foreground">Cours en présentiel</span>
                     </div>
                     <p className="text-muted-foreground text-sm ml-8">
-                      À domicile ou en lieu convenu, selon vos disponibilités.
+                      À domicile (dans le secteur Aix-les-Bains/Chambéry en Savoie), selon vos disponibilités.
                     </p>
                   </div>
                 </div>
@@ -450,7 +447,6 @@ export default function Home() {
                       <li>Développements limités et asymptotiques</li>
                       <li>Suites et séries de fonctions</li>
                       <li>Intégration de Riemann</li>
-                      <li>Théorie de la mesure et intégration de Lebesgue</li>
                       <li>Méthodes numériques (algorithmes de Newton, sécante, dichotomie, etc.)</li>
                       <li>Équations différentielles (ordinaires et partielles)</li>
                       <li>Topologie des espaces métriques (ouverts, fermés, compacité, connexité)</li>
@@ -468,28 +464,19 @@ export default function Home() {
                     <h5 className="text-lg font-medium text-primary mb-2">Analyse fonctionnelle</h5>
                     <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
                       <li>Espaces vectoriels normés</li>
-                      <li>Espaces de Hilbert</li>
-                      <li>Espaces de Banach </li>
-                    </ul>
-                    <h5 className="text-lg font-medium text-primary mb-2">Calcul intégral et transformées</h5>
-                    <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
-                      <li>Intégration de Riemann</li>
-                      <li>Intégration de Lebesgue</li>
-                      <li>Transformée de Fourier</li>
-                      <li>Transformée de Laplace</li>
+                      <li>Espaces de Hilbert et de Banach</li>
                     </ul>
                     <h5 className="text-lg font-medium text-primary mb-2">Probabilités et statistiques</h5>
                     <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
                       <li>Probabilités sur les espaces mesurés</li>
                       <li>Variables aléatoires, lois de probabilité</li>
-                      <li>Espérance, variance, convergence en loi, presque sûre</li>
-                      <li>Processus stochastiques</li>
+                      <li>Espérance, variance, convergence en loi</li>
                     </ul>
                     <h5 className="text-lg font-medium text-primary mb-2">Informatique et calcul scientifique</h5>
                     <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
                       <li>Algorithmique et méthodes numériques</li>
                       <li>Analyse de la complexité</li>
-                      <li>Programmation scientifique (Python, Matlab, etc.)</li>
+                      <li>Programmation scientifique (Python)</li>
                     </ul>
                   </div>
                 </div>
@@ -535,7 +522,7 @@ export default function Home() {
                   <ul className="space-y-3">
                     <li className="flex items-center">
                       <CheckCircle className="w-5 h-5 mr-3" />
-                      <span>Méthodes pédagogiques éprouvées</span>
+                      <span>Méthodes pédagogiques approuvées</span>
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="w-5 h-5 mr-3" />
@@ -543,7 +530,7 @@ export default function Home() {
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="w-5 h-5 mr-3" />
-                      <span>Flexibilité horaires et modalités</span>
+                      <span>Flexibilité horaire</span>
                     </li>
                   </ul>
                 </CardContent>
@@ -571,11 +558,11 @@ export default function Home() {
                     <h4 className="font-semibold text-foreground mb-3">Informations sur la demande :</h4>
                     <ul className="space-y-2 text-muted-foreground">
                       <li>• <strong>Pour qui est la demande ?</strong> (Pour moi-même, Pour mon enfant)</li>
-                      <li>• <strong>Niveau actuel de l'élève</strong> (6ème, 5ème, 4ème, 3ème, 2nde, 1ère, Terminale, Licence, BTS, BUT)</li>
+                      <li>• <strong>Niveau actuel de l'élève</strong> (6ème, 5ème, 4ème, 3ème, 2nde, 1ère, Terminale, Licence, BTS, BUT, Prépa)</li>
                       <li>• <strong>Type de besoin</strong> (Soutien scolaire, Remise à niveau, Préparation aux examens, Préparation aux concours)</li>
-                      <li>• <strong>Modalité préférée</strong> (Distanciel en ligne, Présentiel en personne, Les deux flexible)</li>
+                      <li>• <strong>Modalité préférée</strong> (Distanciel sur ordinateur ou tablette tactile, Présentiel : préciser le lieu)</li>
                       <li>• <strong>Volume horaire souhaité</strong> (1 heure, 1h30, 2 heures, 3 heures, Plus de 3 heures par semaine)</li>
-                      <li>• <strong>Objectif</strong> (Court terme quelques mois, Long terme année scolaire complète)</li>
+                      <li>• <strong>Objectif</strong> (Court terme quelques séances, Long terme plusieurs mois ou année scolaire complète)</li>
                       <li>• <strong>Disponibilités</strong> (jours et horaires préférés)</li>
                       <li>• <strong>Message complémentaire</strong> (informations supplémentaires, difficultés particulières...)</li>
                     </ul>
