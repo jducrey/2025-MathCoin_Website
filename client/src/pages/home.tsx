@@ -358,77 +358,138 @@ export default function Home() {
                   <div className="rounded-x1 shadow-sm border p-6 bg-background">
                     <h4 className="text-lg font-medium text-primary mb-2">6<sup>ème</sup></h4>
                     <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
-                      <li>Fractions et Opérations</li>
+                      <li>Nombres et calculs : opérations sur entiers, décimaux, fractions, calcul mental, proportionnalité</li>
+                      <li>Grandeurs et mesures : unités, conversions, périmètres, aires, volumes, estimation</li>
+                      <li>Géométrie : figures planes et solides, angles, symétrie, repérage dans l’espace</li>
                     </ul>
                   </div>
                   {/* Niveau 5ème */}
                   <div className="rounded-x1 shadow-sm border p-6 bg-background">
                     <h4 className="text-lg font-medium text-primary mb-2">5<sup>ème</sup></h4>
                     <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
-                      <li>Nombres relatives</li>
-                      <li>Etudes des quadrilatères</li>
+                      <li>Nombres et calculs : fractions, décimaux, puissances, opérations sur les nombres relatifs</li>
+                      <li>Grandeurs et mesures : conversions complexes, proportionnalité, pourcentages, vitesses</li>
+                      <li>Géométrie : triangles, quadrilatères, cercles, constructions, symétries axiale et centrale</li>
                     </ul>
                   </div>
                   {/* Niveau 4ème */}
                   <div className="rounded-x1 shadow-sm border p-6 bg-background">
                     <h4 className="text-lg font-medium text-primary mb-2">4<sup>ème</sup></h4>
                     <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
-                      <li>Théorème de Pythagore</li>
+                      <li>Nombres et calculs : puissances, racines carrées, calculs sur les nombres relatifs, fractions</li>
+                      <li>Grandeurs et mesures : proportionnalité, pourcentages, échelles, conversions d’unités</li>
+                      <li>Géométrie : théorème de Pythagore, triangles semblables, transformations (translations, rotations, symétries)</li>
+                      <li>Algèbre : développement, factorisation, équations et inéquations du 1er degré, fonctions linéaires et affines</li>
                     </ul>
                   </div>
                   {/* Niveau 3ème */}
                   <div className="rounded-x1 shadow-sm border p-6 bg-background">
                     <h4 className="text-lg font-medium text-primary mb-2">3<sup>ème</sup></h4>
                     <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
-                      <li>Théorème de Thalès</li>
-                      <li>Trigonométrie</li>
-                      <li>Fonctions linéaires et affines</li>
+                      <li>Nombres et calculs : calcul littéral, puissances, notation scientifique, racines carrées</li>
+                      <li>Grandeurs et mesures : proportionnalité, pourcentages, échelles, volumes de solides usuels</li>
+                      <li>Géométrie : théorème de Thalès, trigonométrie (sinus, cosinus), transformations, sections de solides</li>
+                      <li>Algèbre : fonctions, résolution d’équations et d’inéquations, systèmes d’équations du 1er degré</li>
                     </ul>
                   </div>
                   {/* Niveau 2nd */}
                   <div className="rounded-x1 shadow-sm border p-6 bg-background">
                     <h4 className="text-lg font-medium text-primary mb-2">2<sup>nd</sup></h4>
                     <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
-                      <li>Produit Scalaire</li>
-                      <li>Suites Arithmético-géométriques</li>
-                      <li>Statistiques Descriptives</li>
+                      <li>Nombres et calculs : ensembles de nombres, calculs algébriques, puissances, racines carrées</li>
+                      <li>Géométrie : vecteurs, droites, plans, repérage dans le plan, transformations</li>
+                      <li>Fonctions : fonctions numériques, représentation graphique, variations, images et antécédents</li>
+                      <li>Statistiques et probabilités : séries statistiques, représentations graphiques, probabilités sur un univers fini</li>
+                      <li>Algorithmique et programmation : initiation à la programmation, algorithmes de base</li>
                     </ul>
                   </div>
                   {/* Niveau 1ère */}
                   <div className="rounded-x1 shadow-sm border p-6 bg-background">
                     <h4 className="text-lg font-medium text-primary mb-2">1<sup>ère</sup></h4>
                     <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
-                      <li>Equations du Second Degré</li>
-                      <li>Tangentes et Dérivation</li>
-                      <li>Equations cartésienne et représentations paramétriques</li>
+                      <li>Algèbre : fonctions polynômes du 2nd degré, équations et inéquations, factorisation, développement</li>
+                      <li>Analyse : dérivation, étude de variations, extremums, tangentes</li>
+                      <li>Géométrie : vecteurs, droites et plans dans l’espace, produit scalaire</li>
+                      <li>Probabilités et statistiques : variables aléatoires, loi binomiale, espérance, échantillonnage</li>
+                      <li>Algorithmique et programmation : approfondissement, boucles, conditions, fonctions</li>
                     </ul>
                   </div>
                   {/* Niveau Terminale */}
                   <div className="rounded-x1 shadow-sm border p-6 bg-background">
                     <h4 className="text-lg font-medium text-primary mb-2">Terminale</h4>
+                    <h5 className="text-lg font-medium text-primary mb-2">Algèbre et géométrie :</h5>
                     <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
-                      <li>Fonctions exponentielles et logarithmes</li>
-                      <li>Arithmétiques de Nombres Premiers et Congruences</li>
-                      <li>Produit Vectoriel et Produit Mixte</li>
-                      <li>Matrices et opérations matricielles</li>
-                      <li>Probabilités conditionnelles</li>
+                      <li>Dénombrement (combinaisons, permutations)</li>
+                      <li>Calcul vectoriel dans l’espace, produit scalaire, produit vectoriel, produit mixte, équations de droites et plans</li>
+                      <li>Divisibilité, congruences dans ℤ, décomposition en facteurs premiers, PGCD, algorithme d’Euclide, théorèmes de Bézout et de Gauss, petit théorème de Fermat</li>
+                    </ul>
+                    <h5 className="text-lg font-medium text-primary mb-2">Analyse :</h5>
+                    <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
+                      <li>Suites arithmétiques et géométriques, limites, continuité</li>
+                      <li>Dérivation, intégration, primitives, équations différentielles simples</li>
+                      <li>Matrices (définitions, addition, multiplication, inversion, calculs de puissances)</li>
+                    </ul>
+                    <h5 className="text-lg font-medium text-primary mb-2">Fonctions :</h5>
+                    <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
+                      <li>Logarithme népérien, exponentielle, fonctions trigonométriques, étude de fonctions</li>
+                    </ul>
+                    <h5 className="text-lg font-medium text-primary mb-2">Probabilités et statistiques :</h5>
+                    <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
+                      <li>Probabilités conditionnelles, lois continues (loi normale), variables aléatoires, intervalles de confiance, estimation</li>
+                    </ul>
+                    <h5 className="text-lg font-medium text-primary mb-2">Algorithmique et programmation :</h5>
+                    <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
+                      <li>Algorithmes avancés, simulations, modélisation</li>
                     </ul>
                   </div>
                   {/* Niveau Post-Bac */}
                   <div className="rounded-x1 shadow-sm border p-6 bg-background">
                     <h4 className="text-lg font-medium text-primary mb-2">Post-Bac</h4>
+                    <h5 className="text-lg font-medium text-primary mb-2">Analyse</h5>
                     <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
-                      <li>Equations diophantiennes</li>
-                      <li>Algorithme et Méthodes numériques (Newton, Sécante, ...)</li>
-                      <li>Algèbre linéaire et études des Endomorphismes</li>
-                      <li>Algèbre Structurelle : Groupes, Anneaux, Corps</li>
                       <li>Développements limités et asymptotiques</li>
-                      <li>Suite et Séries de fonctions</li>
+                      <li>Suites et séries de fonctions</li>
                       <li>Intégration de Riemann</li>
-                      <li>Théorie de la Mesure et Intégration de Lesbesgue</li>
-                      <li>Espaces Vectoriels Normés</li>
-                      <li>Espace de Hilbert</li>
-                      <li>Transformée de Fourrier</li>
+                      <li>Théorie de la mesure et intégration de Lebesgue</li>
+                      <li>Méthodes numériques (algorithmes de Newton, sécante, dichotomie, etc.)</li>
+                      <li>Équations différentielles (ordinaires et partielles)</li>
+                      <li>Topologie des espaces métriques (ouverts, fermés, compacité, connexité)</li>
+                      <li>Fonctions de plusieurs variables (dérivées partielles, différentiabilité)</li>
+                    </ul>
+                    <h5 className="text-lg font-medium text-primary mb-2">Algèbre</h5>
+                    <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
+                      <li>Algèbre linéaire : espaces vectoriels, applications linéaires, endomorphismes</li>
+                      <li>Matrices et opérations matricielles (Trace, Déterminant, Transposée, Inverse, Puissances)</li>
+                      <li>Algèbre structurelle : groupes, anneaux, corps</li>
+                      <li>Equations diophantiennes</li>
+                      <li>Réduction des endomorphismes, trigonalisation, diagonalisation, formes canoniques</li>
+                      <li>Polynômes, théorème de Cayley-Hamilton, valeurs propres</li>
+                    </ul>
+                    <h5 className="text-lg font-medium text-primary mb-2">Analyse fonctionnelle</h5>
+                    <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
+                      <li>Espaces vectoriels normés</li>
+                      <li>Espaces de Hilbert</li>
+                      <li>Espaces de Banach </li>
+                    </ul>
+                    <h5 className="text-lg font-medium text-primary mb-2">Calcul intégral et transformées</h5>
+                    <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
+                      <li>Intégration de Riemann</li>
+                      <li>Intégration de Lebesgue</li>
+                      <li>Transformée de Fourier</li>
+                      <li>Transformée de Laplace</li>
+                    </ul>
+                    <h5 className="text-lg font-medium text-primary mb-2">Probabilités et statistiques</h5>
+                    <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
+                      <li>Probabilités sur les espaces mesurés</li>
+                      <li>Variables aléatoires, lois de probabilité</li>
+                      <li>Espérance, variance, convergence en loi, presque sûre</li>
+                      <li>Processus stochastiques</li>
+                    </ul>
+                    <h5 className="text-lg font-medium text-primary mb-2">Informatique et calcul scientifique</h5>
+                    <ul className="pl-5 space-y-2 list-disc text-muted-foreground">
+                      <li>Algorithmique et méthodes numériques</li>
+                      <li>Analyse de la complexité</li>
+                      <li>Programmation scientifique (Python, Matlab, etc.)</li>
                     </ul>
                   </div>
                 </div>
